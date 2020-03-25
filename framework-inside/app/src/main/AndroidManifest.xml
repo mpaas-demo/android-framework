@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mpaas.demo.framework">
+
+    <application
+        android:name="com.alipay.mobile.framework.quinoxless.QuinoxlessApplication"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name">
+        <meta-data
+            android:name="mpaas.quinoxless.extern.application"
+            android:value="com.mpaas.demo.framework.MyApplication" />
+        <!--单组件诊断注册-->
+        <meta-data
+            android:name="diagnose.registry"
+            android:value="com.mpaas.health.cases.framework.FrameworkDiagnoseRegistry;com.mpaas.diagnose.context.common.CommonDiagnoseRegistry" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activityapplication.FirstActivity"/>
+        <activity android:name=".activityapplication.SecondActivity"></activity>
+    </application>
+
+</manifest>

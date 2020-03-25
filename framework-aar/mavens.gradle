@@ -1,0 +1,39 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.test.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.dev.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+    }
+}
+allprojects {
+    repositories {
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.test.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.dev.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+
+    }
+}

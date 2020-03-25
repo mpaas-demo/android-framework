@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Framework_demo</string>
+    <string name="welcome_main">Welcome to MainActivity</string>
+    <string name="welcom_second">Welcome to SecondActivity</string>
+
+    <string name="tip">在com.alipay.mobile.framework.INITED（框架初始化完成）阶段注册了pipeline，pipeline进行的操作是在SharedPreference中记录了运行的时间戳，点击按钮读取存储的值</string>
+    <string name="btn_description">点击获取存储的值</string>
+
+    <string name="receive_tip">Received Action, test success</string>
+
+</resources>

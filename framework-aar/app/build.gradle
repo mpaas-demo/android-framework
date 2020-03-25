@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'com.alipay.apollo.baseline.update'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
+    signingConfigs {
+        release {
+            keyAlias 'mpaas123'
+            keyPassword 'mpaas123'
+            storeFile file('mpaas_keystore.jks')
+            storePassword 'mpaas123'
+        }
+        debug {
+            keyAlias 'mpaas123'
+            keyPassword 'mpaas123'
+            storeFile file('mpaas_keystore.jks')
+            storePassword 'mpaas123'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.mpaas.demo"
+        minSdkVersion 18
+        targetSdkVersion 23
+        versionCode 1
+        versionName "10.0.0.0"
+        ndk {
+            abiFilters "armeabi"
+        }
+    }
+    buildTypes {
+        debug { signingConfig signingConfigs.debug }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenLocal()
+    }
+}
+
+dependencies {
+    annotationProcessor "com.mpaas.mobile:metainfo-compiler:1.3.0"
+    implementation platform('com.mpaas.android:mpaas-baseline:10.1.68-beta7')
+
+    implementation 'com.mpaas.android:logging'
+
+    implementation 'com.android.support:support-v4:26.0.0-alpha1'
+}
