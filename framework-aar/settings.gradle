@@ -1,0 +1,2 @@
+include ':framework-build'
+project(':framework-build').projectDir = new File('app')
