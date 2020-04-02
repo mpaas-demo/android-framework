@@ -1,0 +1,2 @@
+include ':api', ':framework-build'
+project(':framework-build').projectDir = new File('app')
