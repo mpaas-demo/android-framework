@@ -1,6 +1,6 @@
 # android-framework
 ## 介绍
-本 demo 用于演示框架能用组件的使用方式，包括 Application，Service，BroadcastReceiver, Pipeline 文档链接：本demo 为热修复的单组件demo，clone 后直接运行工程即可。
+本 demo 用于演示框架能用组件的使用方式，包括 Application，Service，BroadcastReceiver, Pipeline
 
 ## 支持基线与接入方式
 本 demo 是基于68基线的
