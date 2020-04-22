@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.alipay.library'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+compileOnly 'com.alipay.android.phone.thirdparty:androidsupport-api:13.23@jar'
+provided "com.alipay.android.phone.mobilesdk:framework-api:2.1.1@jar"
+}

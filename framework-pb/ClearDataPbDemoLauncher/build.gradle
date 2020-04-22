@@ -1,0 +1,75 @@
+apply plugin: 'maven'
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+        maven {
+            credentials {
+                username "mvn_read_ws"
+                password "mrk8929"
+            }
+            url "http://mvn.cloud.alipay.com/nexus/content/repositories/releases/"
+        }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.test.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.dev.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/google/'
+            name 'aliyun-google'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.alipay.android:android-gradle-plugin:3.0.0.8.3'
+        classpath 'com.android.boost.easyconfig:easyconfig:2.3.0'
+    }
+}
+allprojects {
+    repositories {
+        flatDir {
+            dirs 'libs'
+            // lib module compile aar
+            //dirs project(":api").file("libs")
+        }
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+        maven {
+            credentials {
+                username "mvn_read_ws"
+                password "mrk8929"
+            }
+            url "http://mvn.cloud.alipay.com/nexus/content/repositories/releases/"
+        }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.test.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+        maven {
+            credentials {
+                username "admin"
+                password "**"
+            }
+            url "http://mvn.dev.alipay.net:8081/artifactory/content/groups/alipay-mobile"
+        }
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/google/'
+            name 'aliyun-google'
+        }
+    }
+}

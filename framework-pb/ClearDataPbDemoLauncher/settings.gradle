@@ -1,0 +1,2 @@
+include ':api', ':cleardatapbdemo-build'
+project(':cleardatapbdemo-build').projectDir = new File('app')
