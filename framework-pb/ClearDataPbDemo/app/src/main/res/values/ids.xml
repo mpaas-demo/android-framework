@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="about_process_icon">false</item>
+    <item type="id" name="relativeLayout1">false</item>
+    <item type="id" name="update_cancel_btn">false</item>
+    <item type="id" name="download_process_title_txt">false</item>
+    <item type="id" name="download_process_bar">false</item>
+    <item type="id" name="progress_text">false</item>
+    <item type="id" name="promt">false</item>
+</resources>

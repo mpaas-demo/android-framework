@@ -1,0 +1,161 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mpaas.demo"
+    android:versionCode="1"
+    android:versionName="1.0.0.0">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <!-- 使用特性声明，包含不需要的和一定需要的 -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.alipay.mobile.quinox.LauncherApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppThemeNew">
+
+        <!--监听application启动过程-->
+        <meta-data
+            android:name="agent.application"
+            android:value="com.mpaas.demo.launcher.MockLauncherApplicationAgent" />
+
+        <!--业务设置欢迎界面，等待框架初始化完成-->
+        <meta-data
+            android:name="agent.activity"
+            android:value="com.mpaas.demo.launcher.MockLauncherActivityAgent" />
+        <!--初始加载时的页面-->
+        <meta-data
+            android:name="agent.activity.layout"
+            android:value="init" />
+
+        <!--mpaasapi-->
+        <meta-data
+            android:name="mpaasapi"
+            android:value="https://cn-hangzhou-component-gw.cloud.alipay.com/mgw.htm" />
+
+        <!--rpc网关-->
+        <meta-data
+            android:name="mobilegw.url"
+            android:value="https://cn-hangzhou-mgs-gw.cloud.alipay.com/mgw.htm" />
+        <!--无限保镖appkey,用于加密-->
+        <meta-data
+            android:name="appkey"
+            android:value="570DA89281533_ANDROID" />
+        <!--无限保镖AppSecret,用于加密-->
+        <meta-data
+            android:name="AppSecret"
+            android:value="" />
+
+        <!--push的网关-->
+        <meta-data
+            android:name="rome.push.gw"
+            android:value="cn-hangzhou-mps-link.cloud.alipay.com" />
+        <!--push的端口-->
+        <meta-data
+            android:name="rome.push.port"
+            android:value="443" />
+        <!--push申请的appid-->
+        <meta-data
+            android:name="ALIPUSH_APPID"
+            android:value="570DA89281533-default" />
+
+        <!--日志上传网关-->
+        <meta-data
+            android:name="logging.gateway"
+            android:value="https://cn-hangzhou-mas-log.cloud.alipay.com" />
+        <!--日志的加密公钥-->
+        <meta-data
+            android:name="setting.logging.encryption.pubkey"
+            android:value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpffOiYcozIfgIiaOPWsmfktv7Sl/9Af3mIgYz7vkTXoGq4iMN+t5BLV6KjddVEI/9oLtAYV8qx7FhFrUoi3smcYfX35ETPUiHi1gLizeXKVSRYhIm2kiDF5lGfDgcS7uJZvmKjbdYy/RphnH+WQvQyeEH+4rjYSkdhIRE2W52BwIDAQAB" />
+
+        <!--监控（电量、流量、闪退、性能、业务、埋点等等）分配的id-->
+        <meta-data
+            android:name="workspaceId"
+            android:value="\0default" />
+
+        <!--签名校验bundle的公钥-->
+        <meta-data
+            android:name="client_signature"
+            android:value="" />
+
+        <!--mpaas初始的service-->
+        <meta-data
+            android:name="agent.commonservice.load"
+            android:value="" />
+
+        <!--设置entryapp
+        <meta-data
+            android:name="agent.entry.pkgname"
+            android:value="" />-->
+
+
+        <!-- 设置appid，服务端会把这个值当成服务端appkey，做验签。如果不配置，则取appkey作为appid -->
+        <meta-data
+            android:name="mobilegw.appid"
+            android:value="570DA89281533" />
+        <!-- 推荐配置：如果配置为V2，将会支持protobuff等高级特性。目前为了兼容一些老网关，默认为V1。-->
+        <meta-data
+            android:name="mobilegw.rpcVersion"
+            android:value="V2" />
+        <meta-data
+            android:name="ClearDataStrategy"
+            android:value="com.mpaas.demo.launcher.ClearDataStrategy" />
+
+        <activity
+            android:name="com.alipay.mobile.quinox.LauncherActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.alipay.mobile.common.logging.process.LogServiceInToolsProcess"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":tools"></service>
+    </application>
+</manifest>

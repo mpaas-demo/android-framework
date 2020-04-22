@@ -1,0 +1,2 @@
+//settings.gradle文件描述当前工程所拥有的modules,因此pom工程转gradle时，这里需要修改alias成最终期望的artifactId
+include ':app'

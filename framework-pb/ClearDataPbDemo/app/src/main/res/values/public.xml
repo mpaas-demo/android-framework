@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="download_cancel_btn_selector" id="0x7f020001" />
+    <public type="drawable" name="download_cancel_normal" id="0x7f020002" />
+    <public type="drawable" name="download_cancel_press" id="0x7f020003" />
+    <public type="drawable" name="download_icon" id="0x7f020004" />
+    <public type="drawable" name="download_progress_horizontal" id="0x7f020005" />
+    <public type="layout" name="download_progress" id="0x7f030000" />
+    <public type="style" name="notify_title" id="0x7f050005" />
+    <public type="style" name="notify_progress" id="0x7f050006" />
+    <public type="style" name="Download_ProgressBar_Horizontal" id="0x7f050007" />
+    <public type="id" name="about_process_icon" id="0x7f060001" />
+    <public type="id" name="update_cancel_btn" id="0x7f060002" />
+    <public type="id" name="download_process_title_txt" id="0x7f060003" />
+    <public type="id" name="download_process_bar" id="0x7f060004" />
+    <public type="id" name="progress_text" id="0x7f060005" />
+</resources>
